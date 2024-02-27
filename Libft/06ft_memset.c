@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   06ft_memset.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmarczyn <kmarczyn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mlg_ubuntu_programer <mlg_ubuntu_progra    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 20:00:31 by kmarczyn          #+#    #+#             */
-/*   Updated: 2024/02/26 22:07:27 by kmarczyn         ###   ########.fr       */
+/*   Updated: 2024/02/27 23:05:29 by mlg_ubuntu_      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@ void	*ft_memset(void *ptr, int value, size_t num)
 {
 	int				i;
 	unsigned char	*p;
+	unsigned char *v;
 
 	// przypisanie pointerowi p zmiennej ptr
 	i = 0;
 	p = ptr;
+	v = (unsigned char)value;
 	while (i < num) // dopuki i jest mniejsze od num
 	{
-		p[i] = (unsigned char)value;
+		p[i] = v;
 		// przypisywanie wartości value do ptr dopuki spełnia warunek
 		++i;
 	}
@@ -34,7 +36,7 @@ void	*ft_memset(void *ptr, int value, size_t num)
 int	main(void)
 {
 	char test[10];
-	ft_memset(test, 'ab', sizeof(test));
-	// memset(test, 'ab', sizeof(test));
+	ft_memset(test, 'a', sizeof(test));
+	// memset(test, 'a', sizeof(test));
 	printf("a = %s \n", test);
 }

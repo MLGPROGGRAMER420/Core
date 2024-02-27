@@ -6,21 +6,35 @@
 /*   By: mlg_ubuntu_programer <mlg_ubuntu_progra    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 21:57:52 by kmarczyn          #+#    #+#             */
-/*   Updated: 2024/02/27 13:11:30 by mlg_ubuntu_      ###   ########.fr       */
+/*   Updated: 2024/02/27 20:07:32 by mlg_ubuntu_      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include <stdio.h>
 
-void *memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-    int i;
+	char	*s;
+	char	*d;
+	size_t			i;
 
-    i = 0;
+	d = (char *)dest;
+	s = (char *)src;
+	i = 0;
+	while (i < n)
+	{
+		d[i] = s[i];
+		i++;
+	}
+	return (dest);
+}
 
-    while ()
-    {
-        dest[i] = src[i];
-        i++;
-    }
+int	main(void)
+{
+    char test[] = "Karasuie";
+    char dest[8];
+
+    ft_memcpy(dest, test, sizeof(test));
+    printf("%s \n", dest);
 }

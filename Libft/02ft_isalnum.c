@@ -3,40 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmarczyn <kmarczyn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mlg_ubuntu_programer <mlg_ubuntu_progra    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 17:47:17 by kmarczyn          #+#    #+#             */
-/*   Updated: 2024/02/26 19:42:16 by kmarczyn         ###   ########.fr       */
+/*   Updated: 2024/02/27 22:41:22 by mlg_ubuntu_      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
 
-char	ft_islnum(char *c)
+int	ft_isalnum(int c)
 {
 	int	i;
 
 	i = 0;
-	while ((c[i] != '\0') && (c[i] >= 'a' && c[i] <= 'z') || (c[i] >= 'A'
-			&& c[i] >= 'Z') || (c[i] >= '0' && c[i] <= '9'))
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
+		|| (c >= '0' && c <= '9'))
 	{
-		i++;
-	}
-	if (c[i] == '\0')
-	{
-		printf("zmienna = %s ma tylko litery alf lub cyfry", c);
-		return (0);
+		return (1);
 	}
 	else
 	{
-		printf("zmienna = %s jest do dupy", c);
-		return (1);
+		return (0);
 	}
 }
 
 int	main(void)
 {
-	char test[] = "tes123t";
-	ft_islnum(test);
+	unsigned char i = '2';
+
+	printf("%d\n", ft_isalnum(i));
+	printf("%d\n", isalnum(i));
 }

@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_digit.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmarczyn <kmarczyn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mlg_ubuntu_programer <mlg_ubuntu_progra    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 15:34:43 by kmarczyn          #+#    #+#             */
-/*   Updated: 2024/02/26 21:26:25 by kmarczyn         ###   ########.fr       */
+/*   Created: 2024/02/26 17:22:52 by kmarczyn          #+#    #+#             */
+/*   Updated: 2024/02/27 22:09:40 by mlg_ubuntu_      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
 
-int	ft_isalpha(char *c)
+int	ft_isdigit(int c)
 {
-	int	i;
-
-	i = 0;
-	while ((c[i] != '\0') && (c[i] >= 'a' && c[i] <= 'z') || (c[i] >= 'A'
-			&& c[i] >= 'Z'))
+	if ((c >= '0' && c <= '9'))
 	{
-		i++;
-	}
-	if (c[i] == '\0')
-	{
-		printf("zmienna = %s ma tylko litery alf", c);
-		return (0);
+		return (1);
 	}
 	else
 	{
-		printf("zmienna = %s jest do dupy", c);
-		return (1);
+		return (0);
 	}
 }
 
 int	main(void)
 {
-	char test[] = "test";
-	ft_isalpha(test);
+	unsigned char i = '2';
+
+	printf("%d\n", ft_isdigit(i));
+	printf("%d\n", isdigit(i));
 }

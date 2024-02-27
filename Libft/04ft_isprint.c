@@ -3,38 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmarczyn <kmarczyn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mlg_ubuntu_programer <mlg_ubuntu_progra    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 19:45:19 by kmarczyn          #+#    #+#             */
-/*   Updated: 2024/02/26 19:55:51 by kmarczyn         ###   ########.fr       */
+/*   Updated: 2024/02/27 22:50:13 by mlg_ubuntu_      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-char	ft_isprint(char *c)
+int	ft_isprint(int c)
 {
-	int	i;
-
-	i = 0;
-	while ((c[i] != '\0') && (c[i] >= 32) && (c[i] <= 127))
+	if (c >= 32 && c <= 127)
 	{
-		i++;
-	}
-	if (c[i] == '\0')
-	{
-		printf("zmienna = %s ma tylko litery alf", c);
-		return (0);
+		return (1);
 	}
 	else
 	{
-		printf("zmienna = %s jest do dupy", c);
-		return (1);
+		return (0);
 	}
 }
 
 int	main(void)
 {
-	char test[] = "test";
-	ft_isprint(test);
+	unsigned char i = '2';
+
+	printf("%d\n", ft_isprint(i));
+	printf("%d\n", isprint(i));
 }
