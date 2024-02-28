@@ -6,7 +6,7 @@
 /*   By: mlg_ubuntu_programer <mlg_ubuntu_progra    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 13:58:55 by mlg_ubuntu_       #+#    #+#             */
-/*   Updated: 2024/02/28 00:32:51 by mlg_ubuntu_      ###   ########.fr       */
+/*   Updated: 2024/02/28 18:18:56 by mlg_ubuntu_      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,32 +16,30 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	*s;
-	char	temp[n];
-	char	*d;
-	char	*t;
-	size_t	i;
-	size_t	x;
+	void	*dest_ptr;
 
-	s = (char *)src;
-	d = (char *)dest;
-	t = (char *)temp;
-	i = 0;
-	x = 0;
-	while (i < n)
+	dest_ptr = dest;
+	if (dest == NULL && src == NULL)
+		return (dest);
+	if (dest == src)
+		return (dest);
+	if (dest > src)
 	{
-		temp[i] = s[i];
-		d[x] = temp[x];
-		i++;
-		x++;
+		while (n--)
+			((char *)dest)[n] = ((char *)src)[n];
 	}
-	return (dest);
+	else
+	{
+		while (n--)
+			*(char *)dest++ = *(char *)src++;
+	}
+	return (dest_ptr);
 }
 
 int	main(void)
 {
-	char test[] = "Karasuie";
-	char *dest;
+	char	test[] = "Karasuie";
+	char	dest[] = "jedza?";
 
 	ft_memmove(dest, test, sizeof(test));
 	// memmove(dest, test, sizeof(test));

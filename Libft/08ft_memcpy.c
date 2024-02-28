@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   08ft_memcpy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlg_ubuntu_programer <mlg_ubuntu_progra    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 21:57:52 by kmarczyn          #+#    #+#             */
-/*   Updated: 2024/02/27 20:07:32 by mlg_ubuntu_      ###   ########.fr       */
+/*   Updated: 2024/02/28 16:43:16 by mlg_ubuntu_      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <stdio.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char	*s;
-	char	*d;
-	size_t			i;
+	void	*dest_ptr;
 
-	d = (char *)dest;
-	s = (char *)src;
-	i = 0;
-	while (i < n)
+	if (!dest && !src)
 	{
-		d[i] = s[i];
-		i++;
+		return (dest);
 	}
-	return (dest);
+	while (n--)
+	{
+		*(char *)dest++ = *(char *)src++;
+	}
+	return (dest_ptr);
+
 }
 
 int	main(void)
 {
-    char test[] = "Karasuie";
-    char dest[8];
+	char test[] = "Karasuie";
+	char *dest;
 
-    ft_memcpy(dest, test, sizeof(test));
-    printf("%s \n", dest);
+	ft_memcpy(dest, test, sizeof(test));
+	printf("%s \n", dest);
 }

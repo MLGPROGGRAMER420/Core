@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   07ft_bzero.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmarczyn <kmarczyn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mlg_ubuntu_programer <mlg_ubuntu_progra    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 21:39:54 by kmarczyn          #+#    #+#             */
-/*   Updated: 2024/02/26 21:56:13 by kmarczyn         ###   ########.fr       */
+/*   Updated: 2024/02/28 15:43:49 by mlg_ubuntu_      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
 #include <stdio.h>
+#include <strings.h>
 
-void	bzero(void *s, size_t num)
+void	*ft_bzero(void *s, size_t n)
 {
-    size_t i;
-    unsigned char *p;
+	unsigned char	*p;
 
-    i = 0;
-    p = s;
-    while (i < num)
-    {
-        p[i] = '\0';
-        ++i;
-    }
+	p = s;
+	while (n--)
+	{
+		p[n] = '\0';
+	}
+	return (s);
 }
 
 int	main(void)
 {
-    char test[10];
-    bzero(test, sizeof(test));
+	char	test[] = "test";
 
-    printf("bzero = %s \n", test);
-    return 0;
+	ft_bzero(test, sizeof(test));
+	printf("bzero = %s \n", test);
+	return (0);
 }

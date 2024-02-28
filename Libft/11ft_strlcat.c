@@ -1,37 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   10ft_strlcpy.c                                     :+:      :+:    :+:   */
+/*   11ft_strlcat.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlg_ubuntu_programer <mlg_ubuntu_progra    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/27 20:50:32 by mlg_ubuntu_       #+#    #+#             */
-/*   Updated: 2024/02/28 16:50:48 by mlg_ubuntu_      ###   ########.fr       */
+/*   Created: 2024/02/28 16:51:54 by mlg_ubuntu_       #+#    #+#             */
+/*   Updated: 2024/02/28 17:59:20 by mlg_ubuntu_      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int	i;
+	size_t	i;
+	size_t	z;
+	size_t	dest_len;
 
+	z = 0;
 	i = 0;
+	while (dest[z] != '\0')
+	{
+		z++;
+	}
+	dest_len = z;
 	while (src[i] != '\0' && i < size)
 	{
-		dest[i] = src[i];
+		dest[z] = src[i];
 		i++;
+		z++;
 	}
-	dest[i] = '\0';
-	return (i);
+	if (dest_len < size)
+	{
+		dest[z] = '\0';
+	}
+	return (dest_len + i);
 }
-
 int	main(void)
 {
-	char	src[] = "Karas";
-	char	dest[] = "test";
+	char src[] = "karasie";
+	char dest[] = "jedza";
 
-	ft_strlcpy(dest, src, sizeof(src));
-	printf("src = %s\n", src);
+	int d, s;
+
+	s = sizeof(src);
+	d = sizeof(dest);
+	int siz = s + d;
+
+	ft_strlcat(dest, src, siz);
 	printf("dest = %s\n", dest);
 }
