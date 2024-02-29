@@ -1,12 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   16ft_memchr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmarczyn <kmarczyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 13:44:47 by kmarczyn          #+#    #+#             */
-/*   Updated: 2024/02/28 21:09:27 by kmarczyn         ###   ########.fr       */
+/*   Created: 2024/02/28 22:04:23 by kmarczyn          #+#    #+#             */
+/*   Updated: 2024/02/28 23:33:00 by kmarczyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	size_t			i;
+	unsigned char	*str;
+
+	i = 0;
+	str = (unsigned char *)s;
+	while (i < n)
+	{
+		if (str[i] == (unsigned char)c)
+        {
+            return(str + i);
+        }
+			i++;
+	}
+    return NULL;
+}
+
+int	main(void)
+{
+	unsigned char string[] = "String";
+	printf("Resould = %p\n", ft_memchr(string, 'r', 5));
+}

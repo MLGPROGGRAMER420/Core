@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_digit.c                                         :+:      :+:    :+:   */
+/*   01ft_digit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlg_ubuntu_programer <mlg_ubuntu_progra    +#+  +:+       +#+        */
+/*   By: kmarczyn <kmarczyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 17:22:52 by kmarczyn          #+#    #+#             */
-/*   Updated: 2024/02/27 22:09:40 by mlg_ubuntu_      ###   ########.fr       */
+/*   Updated: 2024/02/28 20:56:25 by kmarczyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ int	ft_isdigit(int c)
 
 int	main(void)
 {
-	unsigned char i = '2';
+	unsigned char	i;
 
+	i = '2';
 	printf("%d\n", ft_isdigit(i));
 	printf("%d\n", isdigit(i));
 }

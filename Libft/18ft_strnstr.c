@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04ft_isprint.c                                     :+:      :+:    :+:   */
+/*   18ft_strnstr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmarczyn <kmarczyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 19:45:19 by kmarczyn          #+#    #+#             */
-/*   Updated: 2024/02/28 21:08:14 by kmarczyn         ###   ########.fr       */
+/*   Created: 2024/02/28 22:05:17 by kmarczyn          #+#    #+#             */
+/*   Updated: 2024/02/29 01:07:13 by kmarczyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_isprint(int c)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	if (c >= 32 && c <= 127)
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
-}
+	size_t	i;
+	size_t	j;
 
+	if (*needle == '\0')
+	{
+		return ((char *)haystack);
+	}
+	i = 0;
+	while (haystack[i] && i < len)
+	{
+		j = 0;
+		while (haystack[i + j] == needle[j] && len > (i + j))
+		{
+			if (needle[j + 1] == '\0')
+				return ((char *)haystack + i);
+			j++;
+		}
+		i++;
+	}
+	return (NULL);
+}
 int	main(void)
 {
-	unsigned char	i;
-
-	i = '2';
-	printf("%d\n", ft_isprint(i));
+	printf("Resoult = %s\n", ft_strnstr("Karasie jedza", "a", 13));
 }

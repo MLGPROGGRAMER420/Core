@@ -1,33 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04ft_isprint.c                                     :+:      :+:    :+:   */
+/*   19ft_atoi.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmarczyn <kmarczyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 19:45:19 by kmarczyn          #+#    #+#             */
-/*   Updated: 2024/02/28 21:08:14 by kmarczyn         ###   ########.fr       */
+/*   Created: 2024/02/28 22:05:14 by kmarczyn          #+#    #+#             */
+/*   Updated: 2024/02/29 01:21:13 by kmarczyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_isprint(int c)
+int	ft_atoi(const char *str)
 {
-	if (c >= 32 && c <= 127)
+	int	i;
+	int	sign;
+	int	res;
+
+	res = 0;
+	i = 0;
+	sign = 1;
+	while (str[i] == ' ' || str[i] >= 9 && str[i] <= 13)
 	{
-		return (1);
+		i++;
 	}
-	else
+	while (str[i] == '-' || str[i] == '+')
 	{
-		return (0);
+		if (str[i] == '-')
+		{
+			sign *= -1;
+		}
+		i++;
 	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+        res = res * 10 + (str[i] - '0');
+        i++;
+	}
+    return (res * sign);
 }
 
 int	main(void)
 {
-	unsigned char	i;
+	char string[] = "   ---+++12345";
 
-	i = '2';
-	printf("%d\n", ft_isprint(i));
+	printf("Resoult = %d\n", ft_atoi(string));
 }

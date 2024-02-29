@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   10ft_strlcpy.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlg_ubuntu_programer <mlg_ubuntu_progra    +#+  +:+       +#+        */
+/*   By: kmarczyn <kmarczyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 20:50:32 by mlg_ubuntu_       #+#    #+#             */
-/*   Updated: 2024/02/28 16:50:48 by mlg_ubuntu_      ###   ########.fr       */
+/*   Updated: 2024/02/28 21:07:05 by kmarczyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	dest[i] = '\0';
 	return (i);
 }
-
+/*
 int	main(void)
 {
 	char	src[] = "Karas";
@@ -35,3 +35,4 @@ int	main(void)
 	printf("src = %s\n", src);
 	printf("dest = %s\n", dest);
 }
+*/

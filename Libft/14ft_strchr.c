@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04ft_isprint.c                                     :+:      :+:    :+:   */
+/*   14ft_strchr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmarczyn <kmarczyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 19:45:19 by kmarczyn          #+#    #+#             */
-/*   Updated: 2024/02/28 21:08:14 by kmarczyn         ###   ########.fr       */
+/*   Created: 2024/02/28 22:03:23 by kmarczyn          #+#    #+#             */
+/*   Updated: 2024/02/28 22:45:16 by kmarczyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
-int	ft_isprint(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	if (c >= 32 && c <= 127)
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
+    int i = 0;
+    while (*s != '\0')
+    {
+        if(*s == (char)c)
+        {
+            return (char *)s;
+        }
+        s++;
+    }
+    if((char)c == '\0')
+    {
+        return (char *)s;
+    }
+    return NULL;
 }
-
 int	main(void)
 {
-	unsigned char	i;
+    char string[] = "Test string";
+    char *res;
 
-	i = '2';
-	printf("%d\n", ft_isprint(i));
+    res = ft_strchr(string, 's');
+    printf("Resoult = %s \n", res);
 }

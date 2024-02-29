@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   09ft_memmove.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlg_ubuntu_programer <mlg_ubuntu_progra    +#+  +:+       +#+        */
+/*   By: kmarczyn <kmarczyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 13:58:55 by mlg_ubuntu_       #+#    #+#             */
-/*   Updated: 2024/02/28 18:18:56 by mlg_ubuntu_      ###   ########.fr       */
+/*   Updated: 2024/02/28 21:00:19 by kmarczyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest_ptr);
 }
-
+/*
 int	main(void)
 {
 	char	test[] = "Karasuie";
-	char	dest[] = "jedza?";
+	char	dest[] = "jedza?123123";
 
-	ft_memmove(dest, test, sizeof(test));
-	// memmove(dest, test, sizeof(test));
+	ft_memmove(dest, test, 3);
 	printf("%s \n", dest);
 }
+*/

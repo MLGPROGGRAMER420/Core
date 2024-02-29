@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04ft_isprint.c                                     :+:      :+:    :+:   */
+/*   17ft_memcmp.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmarczyn <kmarczyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 19:45:19 by kmarczyn          #+#    #+#             */
-/*   Updated: 2024/02/28 21:08:14 by kmarczyn         ###   ########.fr       */
+/*   Created: 2024/02/28 22:04:52 by kmarczyn          #+#    #+#             */
+/*   Updated: 2024/02/28 23:55:43 by kmarczyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_isprint(int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	if (c >= 32 && c <= 127)
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
-}
+	size_t			i;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
+	i = 0;
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	while (i < n)
+	{
+		if (str1[i] != str2[i])
+		{
+			return (str1[i] - str2[i]);
+		}
+		i++;
+	}
+	return (0);
+}
 int	main(void)
 {
-	unsigned char	i;
+	unsigned char	str1[] = "String";
+	unsigned char	str2[] = "String";
 
-	i = '2';
-	printf("%d\n", ft_isprint(i));
+	printf("Resould = %d\n", ft_memcmp(str1, str2, 5));
 }

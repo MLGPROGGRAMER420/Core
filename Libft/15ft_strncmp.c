@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04ft_isprint.c                                     :+:      :+:    :+:   */
+/*   15ft_strncmp.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmarczyn <kmarczyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 19:45:19 by kmarczyn          #+#    #+#             */
-/*   Updated: 2024/02/28 21:08:14 by kmarczyn         ###   ########.fr       */
+/*   Created: 2024/02/28 22:04:00 by kmarczyn          #+#    #+#             */
+/*   Updated: 2024/02/28 23:11:11 by kmarczyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_isprint(int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if (c >= 32 && c <= 127)
+	size_t	i;
+
+	i = 0;
+	while (i < n && s1[i] != '\0' && s2[i] != '\0')
 	{
-		return (1);
+		if (s1[i] != s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
+		i++;
 	}
-	else
+	if (i < n)
 	{
-		return (0);
+		return (s1[i] - s2[i]);
 	}
+	return (0);
 }
 
 int	main(void)
 {
-	unsigned char	i;
+	char str_1[] = "Testz";
+	char str_2[] = "Testy";
 
-	i = '2';
-	printf("%d\n", ft_isprint(i));
+	printf("wynik to = %d\n", ft_strncmp(str_1, str_2, sizeof(str_1)));
 }

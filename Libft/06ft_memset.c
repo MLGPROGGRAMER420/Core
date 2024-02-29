@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   06ft_memset.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlg_ubuntu_programer <mlg_ubuntu_progra    +#+  +:+       +#+        */
+/*   By: kmarczyn <kmarczyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 20:00:31 by kmarczyn          #+#    #+#             */
-/*   Updated: 2024/02/27 23:05:29 by mlg_ubuntu_      ###   ########.fr       */
+/*   Updated: 2024/02/28 20:56:04 by kmarczyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,13 @@ void	*ft_memset(void *ptr, int value, size_t num)
 {
 	int				i;
 	unsigned char	*p;
-	unsigned char *v;
+	unsigned char	*v;
 
-	// przypisanie pointerowi p zmiennej ptr
 	i = 0;
 	p = ptr;
-	v = (unsigned char)value;
-	while (i < num) // dopuki i jest mniejsze od num
+	while (i < num)
 	{
-		p[i] = v;
-		// przypisywanie wartości value do ptr dopuki spełnia warunek
+		p[i] = (unsigned char)value;
 		++i;
 	}
 	return (ptr);
@@ -35,8 +32,8 @@ void	*ft_memset(void *ptr, int value, size_t num)
 
 int	main(void)
 {
-	char test[10];
+	char	test[10];
+
 	ft_memset(test, 'a', sizeof(test));
-	// memset(test, 'a', sizeof(test));
 	printf("a = %s \n", test);
 }

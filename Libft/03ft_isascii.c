@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   03ft_isascii.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlg_ubuntu_programer <mlg_ubuntu_progra    +#+  +:+       +#+        */
+/*   By: kmarczyn <kmarczyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 19:41:28 by kmarczyn          #+#    #+#             */
-/*   Updated: 2024/02/27 23:36:46 by mlg_ubuntu_      ###   ########.fr       */
+/*   Updated: 2024/02/28 21:01:35 by kmarczyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int	ft_isascii(int c)
 
 int	main(void)
 {
-	unsigned char i = '2';
+	unsigned char	i;
 
+	i = '2';
 	printf("%d\n", ft_isascii(i));
-	//printf("%d\n", isascii(i));
 }

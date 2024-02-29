@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   07ft_bzero.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlg_ubuntu_programer <mlg_ubuntu_progra    +#+  +:+       +#+        */
+/*   By: kmarczyn <kmarczyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 21:39:54 by kmarczyn          #+#    #+#             */
-/*   Updated: 2024/02/28 15:43:49 by mlg_ubuntu_      ###   ########.fr       */
+/*   Updated: 2024/02/28 21:05:40 by kmarczyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_bzero(void *s, size_t n)
 	}
 	return (s);
 }
-
+/*
 int	main(void)
 {
 	char	test[] = "test";
@@ -33,3 +33,4 @@ int	main(void)
 	printf("bzero = %s \n", test);
 	return (0);
 }
+*/
