@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_digit.c                                         :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmarczyn <kmarczyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 17:22:52 by kmarczyn          #+#    #+#             */
-/*   Updated: 2024/02/29 22:18:16 by kmarczyn         ###   ########.fr       */
+/*   Created: 2024/02/28 22:02:52 by kmarczyn          #+#    #+#             */
+/*   Updated: 2024/03/01 00:05:11 by kmarczyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.c"
+#include "libft.h"
 #include <stdio.h>
-#include <unistd.h>
 
-int	ft_isdigit(int c)
+int	ft_tolower(int c)
 {
-	if ((c >= '0' && c <= '9'))
+	if (c >= 'A' && c <= 'Z')
 	{
-		return (1);
+		return (c - 'A' + 'a');
 	}
 	else
-	{
-		return (0);
-	}
+		return (c);
 }
-
+/*
 int	main(void)
 {
-	unsigned char	i;
+	char	low;
+	char	high;
 
-	i = '2';
-	printf("%d\n", ft_isdigit(i));
-	printf("%d\n", isdigit(i));
+	low = 'T';
+	high = ft_tolower(low);
+	printf("low_to_high = %c\n", high);
 }
+*/

@@ -6,23 +6,25 @@
 /*   By: kmarczyn <kmarczyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 21:39:54 by kmarczyn          #+#    #+#             */
-/*   Updated: 2024/02/29 22:18:14 by kmarczyn         ###   ########.fr       */
+/*   Updated: 2024/03/01 00:04:58 by kmarczyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
-#include <strings.h>
 
-void	*ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*p;
+	size_t			i;
 
-	p = s;
-	while (n--)
+	i = 0;
+	p = (unsigned char *)s;
+	while (i < n)
 	{
-		p[n] = '\0';
+		p[i] = '\0';
+		i++;
 	}
-	return (s);
 }
 /*
 int	main(void)

@@ -6,10 +6,11 @@
 /*   By: kmarczyn <kmarczyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 13:58:55 by mlg_ubuntu_       #+#    #+#             */
-/*   Updated: 2024/02/29 22:18:21 by kmarczyn         ###   ########.fr       */
+/*   Updated: 2024/03/01 00:06:04 by kmarczyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

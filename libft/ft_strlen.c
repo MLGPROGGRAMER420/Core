@@ -6,13 +6,14 @@
 /*   By: kmarczyn <kmarczyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 19:56:22 by kmarczyn          #+#    #+#             */
-/*   Updated: 2024/02/29 22:18:24 by kmarczyn         ###   ########.fr       */
+/*   Updated: 2024/03/01 02:17:25 by kmarczyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
 
-int	ft_strlen(char *c)
+int	ft_strlen(const char *c)
 {
 	int	i;
 
@@ -26,9 +27,10 @@ int	ft_strlen(char *c)
 /*
 int	main(void)
 {
-	char test[] = "test";
+	char	test[] = "test";
+	int		x;
 
-	int x = ft_strlen(test);
+	x = ft_strlen(test);
 	printf("str = %d \n", x);
 }
 */

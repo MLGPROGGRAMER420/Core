@@ -6,10 +6,11 @@
 /*   By: kmarczyn <kmarczyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 22:04:52 by kmarczyn          #+#    #+#             */
-/*   Updated: 2024/02/29 22:18:20 by kmarczyn         ###   ########.fr       */
+/*   Updated: 2024/03/01 00:06:15 by kmarczyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
@@ -31,6 +32,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+/*
 int	main(void)
 {
 	unsigned char	str1[] = "String";
@@ -38,3 +40,4 @@ int	main(void)
 
 	printf("Resould = %d\n", ft_memcmp(str1, str2, 5));
 }
+*/

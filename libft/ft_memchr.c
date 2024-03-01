@@ -6,10 +6,11 @@
 /*   By: kmarczyn <kmarczyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 22:04:23 by kmarczyn          #+#    #+#             */
-/*   Updated: 2024/02/29 22:18:19 by kmarczyn         ###   ########.fr       */
+/*   Updated: 2024/03/01 00:06:25 by kmarczyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
@@ -22,16 +23,18 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (str[i] == (unsigned char)c)
-        {
-            return(str + i);
-        }
-			i++;
+		{
+			return (str + i);
+		}
+		i++;
 	}
-    return NULL;
+	return (NULL);
 }
-
+/*
 int	main(void)
 {
-	unsigned char string[] = "String";
+	unsigned char	string[] = "String";
+
 	printf("Resould = %p\n", ft_memchr(string, 'r', 5));
 }
+*/
